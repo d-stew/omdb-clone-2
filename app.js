@@ -1,11 +1,9 @@
-app.config(function($routeProvider) {
+angular.module("OmdbClone").config(function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'partials/home.html',
-      controller: 'HomeController'
+      templateUrl: 'partials/home.html'
     })
     .otherwise({
-      templateUrl: 'partials/home.html',
-      controller: 'HomeController'
+      redirectTo: '/'
     })
 })

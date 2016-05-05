@@ -1,5 +1,5 @@
 angular.module('OmdbClone')
-  .factory('movieService', function($http) {
+  .factory('movieService', ['$http','$q', function($http,$q) {
     var MOVIE_API = 'https://g-omdbapi.herokuapp.com';
 
     var movies = [
@@ -34,27 +34,34 @@ angular.module('OmdbClone')
 
     var movieService = {
       posts: movies,
-      // postById: function(postId) {
-      //   return this.posts.filter(function(post) {
-      //     return post.id === +postId;
-      //   }).pop();
-      // },
+      postById: function(postId) {
+        return this.posts.filter(function(post) {
+          return post.id === +postId;
+        }).pop();
+      },
       getMovie: function(movieName) {
+        var deferred = $q.defer();
         var movie = movieName.split(' ').join('+');
-        return $http.get(MOVIE_API+'/?t='+ movie +'&y=&plot=short&r=json');
+
+        $http.get(MOVIE_API+'/?t='+movie+'&y=&plot=short&r=json')
+          .success(function(response){
+            deferred.resolve(response);
+          }).error(function(errah){
+            deferred.reject(errah);
+        })
+
+        return deferred.promise;
       },
       addPost: function (post) {
           var posts = this.posts,
               postId = posts.length+1;
-
-              // Normalize Post Object
               post['id'] = postId;
-              // post['comments'] = [];
 
           // Insert and Return Posts
-          return this.posts.push(post);
+          this.posts.push(post);
+          return this.posts;
       }
     };
 
     return movieService;
-  });
+  }]);

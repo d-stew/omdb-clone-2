@@ -1,1 +1,1 @@
-var app = angular.module("OmdbClone", ['ngRoute']);
+angular.module("OmdbClone", ['ngRoute']);
