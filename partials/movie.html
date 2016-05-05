@@ -1,9 +1,8 @@
 <span>
-  <h1 class='main-header'>Welcome to the OMDB Clone!</h1>
 
-  <div ng-repeat="movie in view.movies track by $index" class="singleMovie">
+  <div ng-bind="movieService.postById(movie.id)">
     <img ng-src="{{ movie.Poster }}">
-    <h1><a href="#/{{movie.id}}">{{ movie.Title }}</a></h1>
+    <h1>{{ movie.Title }}</h1>
     <p>Release Date: {{ movie.Released }}</p>
     <p>Rating: {{ movie.Rated }}</p>
     <p>Plot: {{ movie.Plot }}</p>

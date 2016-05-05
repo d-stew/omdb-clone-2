@@ -2,9 +2,6 @@ h1.main-header {
   text-align: center;
 }
 
-img {
-  float: left;
-}
 
 div.singleMovie {
   border: 1px solid black;
@@ -12,4 +9,9 @@ div.singleMovie {
   padding: 2%;
   margin: 2%;
   min-height: 300px;
+}
+
+img {
+  float: left;
+  height: 100px;
 }
