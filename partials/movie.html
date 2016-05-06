@@ -1,11 +1,18 @@
 <span>
+  <div>
+    <img ng-src="{{view.singleMovie.Poster}}" class="singleResult">
+    <div class='singleMovieInfo'>
+      <h1>{{ view.singleMovie.Title }}</h1>
+      <h4>{{ view.singleMovie.Year }} || {{ view.singleMovie.Rated}} || {{ view.singleMovie.Runtime}}utes</h4>
+      <p><b>Plot: </b>{{ view.singleMovie.Plot }}</p>
+      <p><b>Cast: </b>{{ view.singleMovie.Actors }}</p>
+      <p><b>Director: </b>{{ view.singleMovie.Director }}</p>
+      <p><b>Written By: </b>{{ view.singleMovie.Writer }}</p>
+      <p><b>Awards: </b>{{ view.singleMovie.Awards }}</p>
 
-  <div ng-bind="movieService.postById(movie.id)">
-    <img ng-src="{{ movie.Poster }}">
-    <h1>{{ movie.Title }}</h1>
-    <p>Release Date: {{ movie.Released }}</p>
-    <p>Rating: {{ movie.Rated }}</p>
-    <p>Plot: {{ movie.Plot }}</p>
-    <p>Actors: {{ movie.Actors }}</p>
+      <h3>Ratings</h3>
+      <p><b>Metascore: </b>{{ view.singleMovie.Metascore }}/100</p>
+      <p><b>IMDB: </b>{{ view.singleMovie.imdbRating }}/10</p>
+    </div>
   </div>
 </span>

@@ -1,19 +1,36 @@
-h1.main-header {
-  text-align: center;
+body { padding-top: 70px; }
+
+h1.nav-header {
+  left: 50%;
+  font-size: 16px;
 }
 
 
+/* SEARCH RESULTS PAGE */
 div.singleMovie {
 
   border-radius: 8px;
   padding: 2%;
   margin: 2%;
-  min-height: 300px;
+  min-height: 250px;
   background-color: rgba(190, 190, 190, 0.5)
 }
 
-img {
+div.movieInfo {
+  margin-top: 5%;
+}
+
+img.results {
   float: left;
-  height: 250px;
+  height: 200px;
   margin-right: 1%;
+}
+
+/* SINGLE RESULT PAGE */
+
+img.singleResult {
+  float: left;
+  margin: 0 2%;
+  border: 4px solid black;
+  height: 400px;
 }

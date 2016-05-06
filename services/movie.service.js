@@ -59,8 +59,19 @@ angular.module('OmdbClone')
           // Insert and Return Posts
           this.posts.push(post);
           return this.posts;
+      },
+      getSingleMovie: function(imdbID) {
+        var deferred = $q.defer();
+
+        $http.get(MOVIE_API+'/?i='+imdbID+'&y=&plot=long&r=json')
+          .success(function(response) {
+            deferred.resolve(response);
+          }).error(function(errah) {
+            deferred.reject(errah);
+        })
+        return deferred.promise;
       }
-    };
+    }
 
     return movieService;
   }]);
