@@ -1,9 +1,9 @@
 <span>
-  <div>
+  <div ng-hide="!view.singleMovie.Title">
     <img ng-src="{{view.singleMovie.Poster}}" class="singleResult">
     <div class='singleMovieInfo'>
       <h1>{{ view.singleMovie.Title }}</h1>
-      <h4>{{ view.singleMovie.Year }} || {{ view.singleMovie.Rated}} || {{ view.singleMovie.Runtime}}utes</h4>
+      <h4>{{ view.singleMovie.Year }} || Rated {{ view.singleMovie.Rated}} || {{ view.singleMovie.Runtime}}utes</h4>
       <p><b>Plot: </b>{{ view.singleMovie.Plot }}</p>
       <p><b>Cast: </b>{{ view.singleMovie.Actors }}</p>
       <p><b>Director: </b>{{ view.singleMovie.Director }}</p>
@@ -14,5 +14,7 @@
       <p><b>Metascore: </b>{{ view.singleMovie.Metascore }}/100</p>
       <p><b>IMDB: </b>{{ view.singleMovie.imdbRating }}/10</p>
     </div>
+    <a class="btn btn-primary" href="#/">Back to Results</a>
+    <a class="btn btn-primary" href="#/" ng-click="clearResults()">New Search</a>
   </div>
 </span>

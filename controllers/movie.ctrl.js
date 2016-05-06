@@ -4,6 +4,7 @@ angular.module("OmdbClone")
 
   $scope.view = {};
   $scope.view.getMovie = {};
+  $scope.view.singleMovie = {};
   var imdbID = $routeParams.id;
 
   $scope.view.getMovie = movieService.getSingleMovie(imdbID).then(function(response){
@@ -12,4 +13,7 @@ angular.module("OmdbClone")
       console.log($scope.view.singleMovie);
     });
 
+  $scope.clearResults = function() {
+    movieService.posts = [];
+  }
 }]);

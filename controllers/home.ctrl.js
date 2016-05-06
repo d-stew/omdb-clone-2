@@ -6,6 +6,7 @@ angular.module("OmdbClone")
   // $scope.view.singleMovie = movieServices.postById()
 
   $scope.getMovie = function(movieName) {
+    $scope.movieName = "";
     movieService.getMovie(movieName).then(function(response){
       for (var i=0; i < response.Search.length; i++) {
         movieService.posts.push(response.Search[i])
