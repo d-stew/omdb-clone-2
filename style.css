@@ -4,14 +4,16 @@ h1.main-header {
 
 
 div.singleMovie {
-  border: 1px solid black;
+
   border-radius: 8px;
   padding: 2%;
   margin: 2%;
   min-height: 300px;
+  background-color: rgba(190, 190, 190, 0.5)
 }
 
 img {
   float: left;
-  height: 100px;
+  height: 250px;
+  margin-right: 1%;
 }

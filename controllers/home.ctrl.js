@@ -7,7 +7,11 @@ angular.module("OmdbClone")
 
   $scope.getMovie = function(movieName) {
     movieService.getMovie(movieName).then(function(response){
-      $scope.view.movies = movieService.addPost(response);
+      for (var i=0; i < response.Search.length; i++) {
+        movieService.posts.push(response.Search[i])
+      }
+      // $scope.view.movies = movieService.addPost(response.Search);
+      console.log($scope.view.movies);
     })
   }
 

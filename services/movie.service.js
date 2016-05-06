@@ -43,13 +43,12 @@ angular.module('OmdbClone')
         var deferred = $q.defer();
         var movie = movieName.split(' ').join('+');
 
-        $http.get(MOVIE_API+'/?t='+movie+'&y=&plot=short&r=json')
+        $http.get(MOVIE_API+'/?s='+movie+'&y=&plot=long&r=json')
           .success(function(response){
             deferred.resolve(response);
           }).error(function(errah){
             deferred.reject(errah);
         })
-
         return deferred.promise;
       },
       addPost: function (post) {

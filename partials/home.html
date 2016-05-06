@@ -4,7 +4,7 @@
   <div ng-repeat="movie in view.movies track by $index" class="singleMovie">
     <img ng-src="{{ movie.Poster }}">
     <h1><a href="#/{{movie.id}}">{{ movie.Title }}</a></h1>
-    <p>Release Date: {{ movie.Released }}</p>
+    <p>Released: {{ movie.Year }}</p>
     <p>Rating: {{ movie.Rated }}</p>
     <p>Plot: {{ movie.Plot }}</p>
     <p>Actors: {{ movie.Actors }}</p>
